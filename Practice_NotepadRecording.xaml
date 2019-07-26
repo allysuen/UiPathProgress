@@ -1,0 +1,194 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Practice_NotepadRecording" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="498,3103" sap2010:WorkflowViewState.IdRef="Practice_NotepadRecording_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="21">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="16">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap:VirtualizedContainerService.HintSize="458,2983" sap2010:WorkflowViewState.IdRef="Sequence_5">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence DisplayName="Practice_NotepadRecording" sap:VirtualizedContainerService.HintSize="436,2859" sap2010:WorkflowViewState.IdRef="Sequence_1">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="inputText" />
+        <Variable x:TypeArguments="x:String" Name="fileName" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:InputDialog Options="{x:Null}" DisplayName="Ask for text" sap:VirtualizedContainerService.HintSize="414,92" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Please type your text:" Title="Ask for text">
+        <ui:InputDialog.Result>
+          <OutArgument x:TypeArguments="x:String">[inputText]</OutArgument>
+        </ui:InputDialog.Result>
+      </ui:InputDialog>
+      <ui:InputDialog Options="{x:Null}" DisplayName="Ask for filename" sap:VirtualizedContainerService.HintSize="414,92" sap2010:WorkflowViewState.IdRef="InputDialog_2" IsPassword="False" Label="What do you want this file to be called?" Title="Ask for File Name">
+        <ui:InputDialog.Result>
+          <OutArgument x:TypeArguments="x:String">[fileName]</OutArgument>
+        </ui:InputDialog.Result>
+      </ui:InputDialog>
+      <ui:OpenApplication ApplicationWindow="{x:Null}" Arguments="{x:Null}" TimeoutMS="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="Open Application 'notepad.exe Untitled'" FileName="C:\Windows\System32\notepad.exe" sap:VirtualizedContainerService.HintSize="414,2471" sap2010:WorkflowViewState.IdRef="OpenApplication_1" InformativeScreenshot="ca0117ea2d4806f5f745e88f64bf2c46" Selector="&lt;wnd app='notepad.exe' cls='Notepad' title='Untitled - Notepad' /&gt;">
+        <ui:OpenApplication.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="358,2325" sap2010:WorkflowViewState.IdRef="Sequence_4">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <Sequence DisplayName="Basic" sap:VirtualizedContainerService.HintSize="336,1211" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into 'editable text'" EmptyField="False" sap:VirtualizedContainerService.HintSize="314,134" sap2010:WorkflowViewState.IdRef="TypeInto_1" SendWindowMessages="False" SimulateType="False" Text="[inputText]">
+                  <ui:TypeInto.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="2d16c58c744933e3312e237d5a47d989" Selector="&lt;wnd app='notepad.exe' cls='Notepad' title='Untitled - Notepad' /&gt;&lt;wnd aaname='Text Editor' cls='Edit' /&gt;&lt;ctrl name='Text Editor' role='editable text' /&gt;" WaitForReady="INTERACTIVE" />
+                  </ui:TypeInto.Target>
+                </ui:TypeInto>
+                <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Send Hotkey 'editable text'" EmptyField="False" sap:VirtualizedContainerService.HintSize="314,155" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="a" KeyModifiers="Ctrl" SendWindowMessages="False" SpecialKey="False">
+                  <ui:SendHotkey.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="86675755ae2419206e5600a71f43ca9c" Selector="&lt;wnd app='notepad.exe' cls='Notepad' title='Untitled - Notepad' /&gt;&lt;wnd aaname='Text Editor' cls='Edit' /&gt;&lt;ctrl name='Text Editor' role='editable text' /&gt;" WaitForReady="INTERACTIVE" />
+                  </ui:SendHotkey.Target>
+                </ui:SendHotkey>
+                <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'menu item  Format'" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                  <ui:Click.CursorPosition>
+                    <ui:CursorPosition OffsetX="31" OffsetY="9" Position="TopLeft" />
+                  </ui:Click.CursorPosition>
+                  <ui:Click.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="0a9eeec056dd0271d470233a0eac72de" Selector="&lt;wnd app='notepad.exe' cls='Notepad' title='Untitled - Notepad' /&gt;&lt;ctrl automationid='MenuBar' idx='1' name='Application' role='menu bar' /&gt;&lt;ctrl name='Format' role='menu item' /&gt;" WaitForReady="INTERACTIVE" />
+                  </ui:Click.Target>
+                </ui:Click>
+                <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'menu item  Font...'" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                  <ui:Click.CursorPosition>
+                    <ui:CursorPosition OffsetX="43" OffsetY="12" Position="TopLeft" />
+                  </ui:Click.CursorPosition>
+                  <ui:Click.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="b7bee58a29d8fc2ba2a4c46cbdb77fba" Selector="&lt;wnd app='notepad.exe' cls='#32768' /&gt;&lt;ctrl name='Format' role='popup menu' /&gt;&lt;ctrl automationid='33' /&gt;" WaitForReady="INTERACTIVE" />
+                  </ui:Click.Target>
+                </ui:Click>
+                <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'list item  Bold'" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                  <ui:Click.CursorPosition>
+                    <ui:CursorPosition OffsetX="36" OffsetY="6" Position="TopLeft" />
+                  </ui:Click.CursorPosition>
+                  <ui:Click.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="2b8d773784af76a51fcf1fa5b4bdb9c5" Selector="&lt;wnd app='notepad.exe' cls='#32770' title='Font' /&gt;&lt;wnd ctrlid='1137' /&gt;&lt;wnd ctrlid='1000' /&gt;&lt;ctrl name='Font style:' role='list' /&gt;&lt;ctrl name='Bold' role='list item' /&gt;" WaitForReady="INTERACTIVE" />
+                  </ui:Click.Target>
+                </ui:Click>
+                <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into 'Edit'" EmptyField="True" sap:VirtualizedContainerService.HintSize="314,134" sap2010:WorkflowViewState.IdRef="TypeInto_2" SendWindowMessages="False" SimulateType="False" Text="20">
+                  <ui:TypeInto.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="bb85574d0863007eeb4c136d7f75746b" Selector="&lt;wnd app='notepad.exe' cls='#32770' title='Font' /&gt;&lt;wnd ctrlid='1138' /&gt;&lt;wnd ctrlid='1001' /&gt;" WaitForReady="INTERACTIVE" />
+                  </ui:TypeInto.Target>
+                </ui:TypeInto>
+                <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Button'" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                  <ui:Click.CursorPosition>
+                    <ui:CursorPosition OffsetX="47" OffsetY="15" Position="TopLeft" />
+                  </ui:Click.CursorPosition>
+                  <ui:Click.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="7a516ac1502fb08e20372a61bb167dcf" Selector="&lt;wnd app='notepad.exe' cls='#32770' title='Font' /&gt;&lt;wnd ctrlid='1' title='OK' /&gt;" WaitForReady="INTERACTIVE" />
+                  </ui:Click.Target>
+                </ui:Click>
+              </Sequence>
+              <Sequence DisplayName="Basic" sap:VirtualizedContainerService.HintSize="336,842" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'menu item  File'" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="Click_5" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                  <ui:Click.CursorPosition>
+                    <ui:CursorPosition OffsetX="16" OffsetY="1" Position="TopLeft" />
+                  </ui:Click.CursorPosition>
+                  <ui:Click.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="f0c27a9a4c55a559dd47820aaf5d3cfb" Selector="&lt;wnd app='notepad.exe' cls='Notepad' title='Untitled - Notepad' /&gt;&lt;ctrl automationid='MenuBar' idx='1' name='Application' role='menu bar' /&gt;&lt;ctrl name='File' role='menu item' /&gt;" WaitForReady="INTERACTIVE" />
+                  </ui:Click.Target>
+                </ui:Click>
+                <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'menu item  Save As...'" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="Click_6" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                  <ui:Click.CursorPosition>
+                    <ui:CursorPosition OffsetX="54" OffsetY="11" Position="TopLeft" />
+                  </ui:Click.CursorPosition>
+                  <ui:Click.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="81b1828d75aaa69b386ffff3630fd962" Selector="&lt;wnd app='notepad.exe' cls='#32768' /&gt;&lt;ctrl name='File' role='popup menu' /&gt;&lt;ctrl automationid='4' /&gt;" WaitForReady="INTERACTIVE" />
+                  </ui:Click.Target>
+                </ui:Click>
+                <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'outline item  Desktop'" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="Click_7" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                  <ui:Click.CursorPosition>
+                    <ui:CursorPosition OffsetX="47" OffsetY="13" Position="TopLeft" />
+                  </ui:Click.CursorPosition>
+                  <ui:Click.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="e0d616a33aa7e0a374cfcba730ad64f8" Selector="&lt;wnd app='notepad.exe' cls='#32770' title='Save As' /&gt;&lt;wnd aaname='Explorer Pane' cls='DirectUIHWND' /&gt;&lt;wnd aaname='Control Host' cls='NamespaceTreeControl' title='Namespace Tree Control' /&gt;&lt;wnd ctrlid='100' title='Tree View' /&gt;&lt;ctrl idx='2' name='Desktop' role='outline item' /&gt;" WaitForReady="INTERACTIVE" />
+                  </ui:Click.Target>
+                </ui:Click>
+                <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into 'Edit'" EmptyField="True" sap:VirtualizedContainerService.HintSize="314,134" sap2010:WorkflowViewState.IdRef="TypeInto_3" SendWindowMessages="False" SimulateType="False" Text="[fileName]">
+                  <ui:TypeInto.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="baae3992f6df6169d5a7054f07a734b9" Selector="&lt;wnd app='notepad.exe' cls='#32770' title='Save As' /&gt;&lt;wnd aaname='Explorer Pane' cls='DirectUIHWND' /&gt;&lt;wnd aaname='File name:' cls='ComboBox' /&gt;&lt;wnd ctrlid='1001' /&gt;" WaitForReady="INTERACTIVE" />
+                  </ui:TypeInto.Target>
+                </ui:TypeInto>
+                <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Button'" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="Click_8" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                  <ui:Click.CursorPosition>
+                    <ui:CursorPosition OffsetX="17" OffsetY="13" Position="TopLeft" />
+                  </ui:Click.CursorPosition>
+                  <ui:Click.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="445bce2334d8043d0673bffa3875facf" Selector="&lt;wnd app='notepad.exe' cls='#32770' title='Save As' /&gt;&lt;wnd ctrlid='1' title='&amp;amp;Save' /&gt;" WaitForReady="INTERACTIVE" />
+                  </ui:Click.Target>
+                </ui:Click>
+              </Sequence>
+              <ui:CloseApplication DisplayName="Close Application" sap:VirtualizedContainerService.HintSize="336,68" sap2010:WorkflowViewState.IdRef="CloseApplication_2">
+                <ui:CloseApplication.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" WaitForReady="INTERACTIVE" />
+                </ui:CloseApplication.Target>
+              </ui:CloseApplication>
+            </Sequence>
+          </ActivityAction>
+        </ui:OpenApplication.Body>
+      </ui:OpenApplication>
+    </Sequence>
+  </Sequence>
+</Activity>

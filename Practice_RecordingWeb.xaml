@@ -1,0 +1,117 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Practice_RecordingWeb" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="512,1464" sap2010:WorkflowViewState.IdRef="Practice_RecordingWeb_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="21">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="16">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Practice_RecordingWeb" sap:VirtualizedContainerService.HintSize="472,1384" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="cityInput" />
+      <Variable x:TypeArguments="x:String" Name="weatherResults" />
+      <Variable x:TypeArguments="x:String" Name="variable1" />
+      <Variable x:TypeArguments="ui:GenericValue" Name="weather" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:InputDialog Options="{x:Null}" DisplayName="User input" sap:VirtualizedContainerService.HintSize="450,92" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Please enter a city: " Title="Ask user to input city name">
+      <ui:InputDialog.Result>
+        <OutArgument x:TypeArguments="x:String">[cityInput]</OutArgument>
+      </ui:InputDialog.Result>
+    </ui:InputDialog>
+    <ui:OpenBrowser UiBrowser="{x:Null}" BrowserType="IE" DisplayName="Open Browser" Hidden="False" sap:VirtualizedContainerService.HintSize="450,1029" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" NewSession="True" Private="False" Url="https://www.google.com/">
+      <ui:OpenBrowser.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+          </ActivityAction.Argument>
+          <Sequence sap:VirtualizedContainerService.HintSize="436,930" sap2010:WorkflowViewState.IdRef="Sequence_5">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:MaximizeWindow Window="{x:Null}" DisplayName="Maximize Window" sap:VirtualizedContainerService.HintSize="414,22" sap2010:WorkflowViewState.IdRef="MaximizeWindow_1" />
+            <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="IE" DisplayName="Attach Browser 'Google Page'" sap:VirtualizedContainerService.HintSize="414,744" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="9aab1cde3195f450c7eca0314c1205d3" Selector="&lt;html title='Google' /&gt;">
+              <ui:BrowserScope.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="336,598" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into 'INPUT'" EmptyField="False" sap:VirtualizedContainerService.HintSize="314,134" sap2010:WorkflowViewState.IdRef="TypeInto_3" SendWindowMessages="False" SimulateType="True" Text="[&quot;weather in &quot; + cityInput]">
+                      <ui:TypeInto.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="6d9822ae724ced0b7228d9f08dbf5a4f" Selector="&lt;webctrl name='q' tag='INPUT' /&gt;" WaitForReady="COMPLETE" />
+                      </ui:TypeInto.Target>
+                    </ui:TypeInto>
+                    <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Send Hotkey 'INPUT'" EmptyField="False" sap:VirtualizedContainerService.HintSize="314,154" sap2010:WorkflowViewState.IdRef="SendHotkey_3" Key="enter" KeyModifiers="None" SendWindowMessages="False" SpecialKey="True">
+                      <ui:SendHotkey.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="193fc58481f706ca864b069b1d465a58" Selector="&lt;webctrl name='q' tag='INPUT' /&gt;" WaitForReady="COMPLETE" />
+                      </ui:SendHotkey.Target>
+                    </ui:SendHotkey>
+                    <ui:GetFullText DisplayName="Get Full Text 'SPAN  wob_tm'" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="GetFullText_3" IgnoreHidden="False">
+                      <ui:GetFullText.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="6db5bd9a1b4348914aa18db4dc79f796" Selector="&lt;webctrl id='wob_tm' tag='SPAN' /&gt;" WaitForReady="COMPLETE" />
+                      </ui:GetFullText.Target>
+                      <ui:GetFullText.Text>
+                        <OutArgument x:TypeArguments="ui:GenericValue">[weather]</OutArgument>
+                      </ui:GetFullText.Text>
+                    </ui:GetFullText>
+                  </Sequence>
+                </ActivityAction>
+              </ui:BrowserScope.Body>
+            </ui:BrowserScope>
+          </Sequence>
+        </ActivityAction>
+      </ui:OpenBrowser.Body>
+    </ui:OpenBrowser>
+    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="450,59" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;The weather in &quot; + cityInput + &quot; is : &quot; + weather + &quot; degrees.&quot;]" TopMost="True" />
+  </Sequence>
+</Activity>
